@@ -2,6 +2,7 @@
 from flask import Flask
 from flask_restful import Api
 from dotenv import load_dotenv
+from . import database_mgr
 
 load_dotenv()
 
@@ -14,4 +15,5 @@ routes.loaded_indicator()
 
 def run():
     ''' This is the function that will run the app via the cli'''
+    database_mgr.confirm_db()
     app.run()
