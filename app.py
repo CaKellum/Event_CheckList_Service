@@ -1,5 +1,5 @@
 ''' This is the file you run '''
-from .service_runner import app_container
+from service_runner import app_container
 
 
 def main():
