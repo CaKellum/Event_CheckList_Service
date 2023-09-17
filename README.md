@@ -1,2 +1,2 @@
-# Event_CheckList_Service
-A service api that tracks events, equipment, people, and services and helps generate collection
+# Event Checklist Api #
+This is the service to power the Event equipment check list and assign reponsibility
