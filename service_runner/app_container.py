@@ -1,5 +1,4 @@
 ''' This file creates and adds the routes and resources to the app and api '''
-#
 from flask import Flask
 from flask_restful import Api
 from dotenv import load_dotenv
