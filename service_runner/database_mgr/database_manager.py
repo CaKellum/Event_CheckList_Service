@@ -17,4 +17,4 @@ class DatabaseManager():
     def __get_connection__(self):
         self.__conection_counter += 1
         print(f"{self.__conection_counter} made connections in life of this manager")
-        return connect(self.__db_path)
+        return connect(self.__db_path) 
