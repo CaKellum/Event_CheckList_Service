@@ -2,9 +2,10 @@
 from flask import Flask
 from flask_restful import Api
 from dotenv import load_dotenv
-from . import database_mgr
 
 load_dotenv()
+
+from . import database_mgr
 
 app = Flask(__name__)
 api = Api(app)
