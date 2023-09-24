@@ -1,20 +1,17 @@
+import pstats
 from sqlite3 import Connection, connect
+
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import DeclarativeBase
+
 from os import getenv, path
 
-db_path = getenv('DB_PATH')
-table_file_path = getenv('TABLE_PATH')
+class Base(DeclarativeBase):
+    pass
 
-def confirm_db():
-    should_load_tables = (path.exists(db_path) == False)
-    with connect(db_path) as app_conn:
-        if should_load_tables:
-            print("loading the tables")
-            load_file(app_conn)
-        else:
-            print("db file existed")
+db = SQLAlchemy(model_class=Base)
 
-def load_file(app_conn: Connection):
-    with open(table_file_path) as file: 
-        sql_script = file.read()
-        cursor = app_conn.cursor() 
-        cursor.executescript(sql_script)
+from .. import models
+
+def start_db():
+    db.create_all()

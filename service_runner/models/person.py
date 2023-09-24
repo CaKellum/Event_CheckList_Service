@@ -1,7 +1,9 @@
 ''' creates the person class '''
+from sqlalchemy import Integer, String
+from sqlalchemy.orm import Mapped, mapped_column
+from ..database_mgr import db
 
-
-class Person():
+class Person(db.Model):
     def __init__(self, id: int, person_name: str):
         ''' initilizer for person '''
         self.id = id
