@@ -11,4 +11,4 @@ prettytable==3.9.0
 pytz==2023.3.post1
 six==1.16.0
 wcwidth==0.2.6
-Werkzeug==2.3.7
+Werkzeug==3.0.1
